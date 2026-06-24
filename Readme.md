@@ -6,12 +6,12 @@
     <strong>나라장터 입찰공고를 자동 수집하고, 기업별 관심 조건과 매칭해 이메일로 알려주는 B2B SaaS형 웹 애플리케이션</strong>
   </p>
   <p>
-    <a href="https://youtu.be/N0r80Q7XzMQ" target="_blank">
-      <img src="https://img.youtube.com/vi/N0r80Q7XzMQ/maxresdefault.jpg" alt="BidMatch 시연 영상" width="78%">
+    <a href="https://www.youtube.com/watch?v=Omh36JkK0x0" target="_blank">
+      <img src="https://img.youtube.com/vi/Omh36JkK0x0/maxresdefault.jpg" alt="BidMatch 시연 영상" width="78%">
     </a>
   </p>
   <p>
-    <a href="https://youtu.be/N0r80Q7XzMQ">시연 영상 보기</a>
+    <a href="https://www.youtube.com/watch?v=Omh36JkK0x0">시연 영상 보기</a>
     ·
     <a href="./document">설계 문서</a>
     ·
