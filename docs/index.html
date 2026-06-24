@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BidMatch는 나라장터 입찰공고를 자동 수집하고 사용자 관심 조건과 매칭해 이메일로 알려주는 B2B SaaS형 웹 애플리케이션입니다.">
+    <title>BidMatch | 스마트 공공입찰 매칭 플랫폼</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav" aria-label="주요 링크">
+        <a class="brand" href="#top" aria-label="BidMatch 홈">
+          <span class="brand-mark">B</span>
+          <span>BidMatch</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">기능</a>
+          <a href="#architecture">구조</a>
+          <a href="#demo">시연</a>
+          <a href="https://github.com/jjomton/bidmatch">GitHub</a>
+        </div>
+      </nav>
+
+      <section id="top" class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">나라장터 공공입찰 자동 수집 · 조건 매칭 · 이메일 알림</p>
+          <h1>BidMatch</h1>
+          <p class="lead">
+            반복적인 입찰공고 검색을 자동화하고, 기업별 관심 조건에 맞는 공고만 골라 이메일 Digest와 대시보드로 전달하는 업무용 SaaS 프로젝트입니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://youtu.be/N0r80Q7XzMQ">시연 영상 보기</a>
+            <a class="button secondary" href="https://github.com/jjomton/bidmatch">저장소 보기</a>
+          </div>
+          <dl class="metrics">
+            <div>
+              <dt>25+</dt>
+              <dd>분석한 나라장터 API</dd>
+            </div>
+            <div>
+              <dt>12</dt>
+              <dd>우선 개발 단계</dd>
+            </div>
+            <div>
+              <dt>1h</dt>
+              <dd>정기 수집 주기 지원</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="hero-panel" aria-label="BidMatch 주요 화면 미리보기">
+          <img src="https://raw.githubusercontent.com/jjomton/bidmatch/master/assets/images/dashboard.png" alt="BidMatch 대시보드 화면">
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section split">
+        <div>
+          <p class="eyebrow">Problem</p>
+          <h2>입찰 담당자의 하루를 잡아먹는 반복 검색을 줄입니다.</h2>
+        </div>
+        <div class="text-block">
+          <p>
+            공공입찰 담당자는 매일 나라장터에 접속해 키워드, 기관, 지역, 업종, 예산 조건을 반복 입력하고 마감일을 따로 확인해야 합니다. BidMatch는 이 흐름을 수집, 정규화, 매칭, 알림, 운영 로그까지 이어지는 자동화 파이프라인으로 전환합니다.
+          </p>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <p class="eyebrow">Core Features</p>
+        <h2>공고를 찾는 일보다 판단하는 일에 집중하게 합니다.</h2>
+        <div class="feature-grid">
+          <article class="card">
+            <h3>나라장터 자동 수집</h3>
+            <p>용역과 물품 공고를 중심으로 나라장터 OpenAPI를 호출하고, 원본 응답과 정규화 데이터를 함께 저장합니다.</p>
+          </article>
+          <article class="card">
+            <h3>관심 조건 매칭</h3>
+            <p>포함/제외 키워드, 기관, 지역, 업종, 물품분류, 금액 조건을 조합해 사용자의 관심 공고를 선별합니다.</p>
+          </article>
+          <article class="card">
+            <h3>이메일 Digest</h3>
+            <p>매칭된 공고를 사용자별로 묶어 이메일로 발송하고, 발송 성공과 실패 이력을 추적합니다.</p>
+          </article>
+          <article class="card">
+            <h3>마감일 관리</h3>
+            <p>마감 임박 공고와 관심 공고 일정을 대시보드와 캘린더에서 확인할 수 있도록 설계했습니다.</p>
+          </article>
+          <article class="card">
+            <h3>운영 로그</h3>
+            <p>수집 실행 결과, 저장 건수, 오류 메시지, 이메일 발송 상태를 관리자가 확인할 수 있습니다.</p>
+          </article>
+          <article class="card">
+            <h3>AI 요약 확장</h3>
+            <p>Google Gemini API를 활용해 긴 공고 내용을 짧게 요약하는 흐름까지 확장할 수 있습니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workflow">
+        <p class="eyebrow">Workflow</p>
+        <h2>사용자가 조건만 등록하면 나머지는 자동으로 흐릅니다.</h2>
+        <div class="steps">
+          <article>
+            <strong>01</strong>
+            <h3>조건 등록</h3>
+            <p>사용자는 키워드, 기관, 지역, 업종, 물품분류, 금액 조건을 관심 조건으로 저장합니다.</p>
+          </article>
+          <article>
+            <strong>02</strong>
+            <h3>공고 수집</h3>
+            <p>Worker가 나라장터 OpenAPI에서 용역과 물품 공고를 수집하고 정규화합니다.</p>
+          </article>
+          <article>
+            <strong>03</strong>
+            <h3>자동 매칭</h3>
+            <p>공고와 사용자 조건을 비교하고 제외 키워드와 중복 알림을 걸러냅니다.</p>
+          </article>
+          <article>
+            <strong>04</strong>
+            <h3>알림 발송</h3>
+            <p>매칭된 공고를 이메일 Digest로 보내고 발송 이력과 오류 상태를 남깁니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="architecture" class="section architecture">
+        <div class="section-head">
+          <p class="eyebrow">Architecture</p>
+          <h2>수집부터 알림까지 이어지는 구조</h2>
+        </div>
+        <img src="https://raw.githubusercontent.com/jjomton/bidmatch/master/assets/images/architecture.png" alt="BidMatch 시스템 아키텍처">
+        <div class="pipeline">
+          <span>OpenAPI</span>
+          <span>Collector</span>
+          <span>MariaDB</span>
+          <span>Matcher</span>
+          <span>Email</span>
+          <span>Dashboard</span>
+        </div>
+      </section>
+
+      <section class="section stack-section">
+        <p class="eyebrow">Tech Stack</p>
+        <h2>React와 Flask 기반의 분리형 웹 애플리케이션</h2>
+        <div class="stack-grid">
+          <div>
+            <h3>Frontend</h3>
+            <p>React 18, Vite, React Router, Axios, Lucide React</p>
+          </div>
+          <div>
+            <h3>Backend</h3>
+            <p>Python 3.12, Flask, Flask-CORS, PyJWT, APScheduler</p>
+          </div>
+          <div>
+            <h3>Database</h3>
+            <p>MariaDB, PyMySQL, 자동 스키마 보강 구조</p>
+          </div>
+          <div>
+            <h3>External</h3>
+            <p>나라장터 OpenAPI, SMTP, Google Gemini API</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="section demo">
+        <div class="section-head">
+          <p class="eyebrow">Demo</p>
+          <h2>시연 영상</h2>
+        </div>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/N0r80Q7XzMQ"
+            title="BidMatch 사용자 시연 영상"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <section class="section roadmap">
+        <p class="eyebrow">Roadmap</p>
+        <h2>MVP에서 운영형 서비스로 확장하는 개발 순서</h2>
+        <ol>
+          <li>회원가입, 로그인, 인증 토큰 검증</li>
+          <li>프로필, 기업 정보, 관심 조건 CRUD</li>
+          <li>나라장터 API 수집과 Raw 데이터 저장</li>
+          <li>공고 목록, 상세, 검색, CSV 다운로드 API</li>
+          <li>사용자 조건 기반 매칭과 이메일 Digest 발송</li>
+          <li>마감일 캘린더, 관리자 로그, 수동 재조회</li>
+          <li>AI 요약, 카카오 알림톡, 변경이력 반영</li>
+        </ol>
+      </section>
+
+      <section class="section team">
+        <p class="eyebrow">Team</p>
+        <h2>기획부터 수집, 화면, 알림까지 나누어 만든 팀 프로젝트</h2>
+        <div class="team-grid">
+          <article><strong>안민영</strong><span>PM · 시스템 설계와 프로젝트 관리</span></article>
+          <article><strong>김종록</strong><span>PL · 로그인, 이메일, Gemini 요약</span></article>
+          <article><strong>김혜라</strong><span>Frontend · 대시보드와 공고 화면</span></article>
+          <article><strong>변영진</strong><span>Backend · 나라장터 API 수집</span></article>
+          <article><strong>이명일</strong><span>Feature · 캘린더와 사용자 관리</span></article>
+        </div>
+      </section>
+
+      <section class="section docs">
+        <p class="eyebrow">Documents</p>
+        <h2>프로젝트 문서</h2>
+        <div class="doc-list">
+          <a href="https://github.com/jjomton/bidmatch/tree/master/document/01-requirements">요구사항</a>
+          <a href="https://github.com/jjomton/bidmatch/tree/master/document/02-architecture">아키텍처</a>
+          <a href="https://github.com/jjomton/bidmatch/tree/master/document/03-database">데이터베이스</a>
+          <a href="https://github.com/jjomton/bidmatch/tree/master/document/04-api">API 분석</a>
+          <a href="https://github.com/jjomton/bidmatch/tree/master/document/05-design">화면 설계</a>
+          <a href="https://github.com/jjomton/bidmatch/tree/master/document/09-troubleshooting">트러블슈팅</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>BidMatch · 스마트 공공입찰 매칭 플랫폼</p>
+      <a href="https://github.com/jjomton/bidmatch">GitHub Repository</a>
+    </footer>
+  </body>
+</html>
